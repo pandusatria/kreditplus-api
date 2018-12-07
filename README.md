@@ -3,13 +3,13 @@ API with Golang for Training Kreditplus
 
 Prepare plugin before code :
 
-go get -u -v github.com/gin-gonic/gin
-go get -u -v github.com/denisenkom/go-mssqldb
-go get -u -v github.com/lib/pq
-go get -u -v github.com/Sirupsen/logrus
-go get -u -v github.com/dgrijalva/jwt-go
-go get -u -v golang.org/x/crypto/bcrypt
-go get -u -v github.com/jinzhu/gorm
+- go get -u -v github.com/gin-gonic/gin
+- go get -u -v github.com/denisenkom/go-mssqldb
+- go get -u -v github.com/lib/pq
+- go get -u -v github.com/Sirupsen/logrus
+- go get -u -v github.com/dgrijalva/jwt-go
+- go get -u -v golang.org/x/crypto/bcrypt
+- go get -u -v github.com/jinzhu/gorm
 
 Step-by-step running :
 
