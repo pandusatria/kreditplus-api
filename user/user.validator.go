@@ -1,6 +1,7 @@
 package user
 
 import (
+	"fmt"
 	common "kreditplus/kreditplus-api/commons"
 	"time"
 
@@ -47,7 +48,8 @@ func NewUserModelValidator() ModelValidatorUser {
 // BindUpdate : There are some difference when you create or update a model, you need to fill the DataModel before
 // update so that you can use your origin data to cheat the validator.
 // BTW, you can put your general binding logic here such as setting password.
-func (usermodel *ModelValidatorUser) BindUpdate(c *gin.Context) error {
+func (usermodel *ModelValidatorUpdateUser) BindUpdate(c *gin.Context) error {
+	fmt.Println("Test - BindUpdate")
 	err := common.Bind(c, usermodel)
 	if err != nil {
 		return err
@@ -72,8 +74,9 @@ func (usermodel *ModelValidatorUser) BindUpdate(c *gin.Context) error {
 }
 
 // UpdateUserModelValidator : You can put the default value of a Validator here
-func UpdateUserModelValidator() ModelValidatorUser {
-	userModelValidator := ModelValidatorUser{}
+func UpdateUserModelValidator() ModelValidatorUpdateUser {
+	userModelValidator := ModelValidatorUpdateUser{}
+	fmt.Println("Test - UpdateUserModelValidator")
 	return userModelValidator
 }
 

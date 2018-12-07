@@ -52,6 +52,23 @@ type ModelValidatorUser struct {
 	EmployeeModel employee.ModelEmployee `json:"employeemodel"`
 }
 
+// ModelValidatorUpdateUser : *ModelValidator containing two parts:
+// - Validator: write the form/json checking rule according to the doc https://github.com/go-playground/validator
+// - DataModel: fill with data from Validator after invoking common.Bind(c, self)
+// Then, you can just call model.save() after the data is ready in DataModel.
+type ModelValidatorUpdateUser struct {
+	User struct {
+		ID           int64     `json:"id" form:"id"`
+		Username     string    `form:"username" json:"username" binding:"exists,min=4,max=255"`
+		Password     string    `form:"password" json:"password" binding:"exists,min=5,max=255"`
+		Role         string    `form:"role" json:"role" binding:"max=1024"`
+		PasswordHash string    `form:"password_hash" json:"password_hash" binding:"exists"`
+		Updateddate  time.Time `json:"updated_date" form:"updated_date" binding:"exists"`
+		Updatedby    string    `json:"updated_by" form:"updated_by" binding:"exists"`
+	} `json:"user"`
+	UserModel ModelUser `json:"usermodel"`
+}
+
 // LoginValidator : model for login validator
 type LoginValidator struct {
 	User struct {

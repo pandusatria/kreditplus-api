@@ -2,6 +2,7 @@ package user
 
 import (
 	"errors"
+	"fmt"
 	common "kreditplus/kreditplus-api/commons"
 	employee "kreditplus/kreditplus-api/employee"
 	"net/http"
@@ -72,6 +73,7 @@ func GetAll(c *gin.Context) {
 
 // ModifyUser : func Update User
 func ModifyUser(c *gin.Context) {
+	fmt.Println("Test - ModifyUser")
 	userModelValidator := UpdateUserModelValidator()
 	if err := userModelValidator.BindUpdate(c); err != nil {
 		c.JSON(http.StatusUnprocessableEntity, common.NewValidatorError(err))

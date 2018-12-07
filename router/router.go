@@ -17,6 +17,7 @@ func BeforeLogin(router *gin.RouterGroup) {
 func AfterLogin(router *gin.RouterGroup) {
 	router.GET("/user", user.GetAll)
 	router.GET("/user/:id", user.GetDetail)
+	common.Logger("info", "AfterLogin - user.ModifyUser", "Modul Employee : ListAll")
 	router.PUT("/user", user.ModifyUser)
 	router.DELETE("/user/:id", user.RemoveUser)
 
