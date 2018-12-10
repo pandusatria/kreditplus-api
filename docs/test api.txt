@@ -1,0 +1,11 @@
+router.POST("/register", user.Registration) - Done
+router.POST("/login", user.Login) - Done
+router.GET("/user", user.GetAll) - Done
+router.GET("/user/:id", user.GetDetail) - Done
+router.GET("/employee", employee.GetAll) - Done
+router.GET("/employee/:id", employee.GetDetail) - Done
+
+
+router.PUT("/user", user.ModifyUser)
+router.DELETE("/user/:id", user.RemoveUser)
+router.PUT("/employee", employee.ModifyEmployee)

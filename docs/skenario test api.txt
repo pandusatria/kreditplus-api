@@ -1,0 +1,70 @@
+Test Case Kreditplus API
+
+Register :
+
+url : localhost:9090/api/beforelogin/register
+method : POST
+request :
+{
+	"user" :
+	{
+		"username" : "nura.nanda",
+		"password" : "12345",
+		"role" : "staff",
+		"firstname" : "Nura",
+		"lastname" : "Nanda",
+		"jobtitle" : "Web Developer",
+		"salary" : 8000000
+	}
+}
+
+Login :
+
+url : localhost:9090/api/beforelogin/login
+method : POST
+request :
+{
+	"user" :
+	{
+		"username" : "pandu.satria",
+		"password" : "12345"
+	}
+}
+
+Get All User :
+
+url : localhost:9090/api/afterlogin/user
+method : GET
+token : required
+
+Get User By ID
+
+url : localhost:9090/api/afterlogin/user/7
+method : GET
+token : required
+
+Get All Employee
+
+url : localhost:9090/api/afterlogin/employee
+method : GET
+token : required
+
+Get All Employee By ID
+url : localhost:9090/api/afterlogin/employee/2
+method : GET
+token : required
+
+Update Existing User
+url : localhost:9090/api/afterlogin/user
+method : PUT
+request : 
+{
+	"user" : 
+	{
+		"id" : 8,
+		"username" : "zlatan.ibrahimovic",
+		"password" : "12345",
+		"role" : "admin"
+	}
+}
+token : required
